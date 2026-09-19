@@ -31,52 +31,9 @@ h1 {
 }
 
 canvas {
-  display: block;
-  margin: 0 auto;
   background: #1c1c1c;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  max-width: 100%;
-  touch-action: none;
-}
-
-.dpad {
-  display: grid;
-  grid-template-columns: repeat(3, 56px);
-  grid-template-rows: repeat(2, 56px);
-  justify-content: center;
-  gap: 8px;
-  margin: 20px auto 0;
-}
-
-.dpad__btn {
-  margin: 0;
-  padding: 0;
-  font-size: 1.2rem;
-  border-radius: 12px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.dpad__up {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.dpad__left {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.dpad__right {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-.dpad__down {
-  grid-column: 2;
-  grid-row: 2;
 }
 
 button {
