@@ -173,6 +173,12 @@ window.addEventListener('keydown', (e) => {
   move(dir[0], dir[1]);
 });
 
+document.querySelectorAll('.dpad__btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    move(Number(btn.dataset.dx), Number(btn.dataset.dy));
+  });
+});
+
 document.getElementById('restart').addEventListener('click', resetGame);
 document.getElementById('play-again').addEventListener('click', resetGame);
 
