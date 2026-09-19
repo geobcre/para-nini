@@ -31,11 +31,12 @@ h1 {
 }
 
 canvas {
+  display: block;
+  margin: 0 auto;
   background: #1c1c1c;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  max-width: 90vw;
-  height: auto;
+  max-width: 100%;
   touch-action: none;
 }
 

@@ -1,11 +1,16 @@
 const COLS = 12;
 const ROWS = 12;
-const CELL = 40;
+let CELL = 40;
 
 const canvas = document.getElementById('maze');
-canvas.width = COLS * CELL;
-canvas.height = ROWS * CELL;
 const ctx = canvas.getContext('2d');
+
+function fitCanvasToScreen() {
+  const available = Math.min(window.innerWidth * 0.9, window.innerHeight * 0.6, 480);
+  CELL = Math.floor(available / COLS);
+  canvas.width = COLS * CELL;
+  canvas.height = ROWS * CELL;
+}
 
 const winOverlay = document.getElementById('win');
 const winText = document.getElementById('win-text');
@@ -156,9 +161,19 @@ function resetGame() {
   winAudio.pause();
   winAudio.currentTime = 0;
   player = { x: 0, y: 0 };
+  fitCanvasToScreen();
   generateMaze();
   draw();
 }
+
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    fitCanvasToScreen();
+    draw();
+  }, 150);
+});
 
 window.addEventListener('keydown', (e) => {
   const map = {
